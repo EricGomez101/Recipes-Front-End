@@ -27,9 +27,19 @@
                     }
                     div {
                         display: flex;
+                        align-items: center;
                         p {
                             margin-right: 2rem;
                         }
+                        .RecipeTag {
+                            background: lightgray;
+                            padding: 0.5rem 1rem;
+                            border-radius: 5px;
+                            color: black;
+                        }
+                    }
+                    div:not(last-child) {
+                        margin-bottom: 1rem;
                     }
                 }
                 .Notes {
@@ -61,6 +71,23 @@
                         }
                     }
                 }
+                .Ingredients {
+                    margin: 5rem 0 3rem;
+                    h2 {
+                        margin-bottom: 2rem;
+                    }
+                    p {
+                        font-size: 1.8rem;
+                        span {
+                            font-size: 2.5rem;
+                            color: #315990;
+                            font-weight: bold;
+                        }
+                    }
+                    p:not(last-child) {
+                        margin-bottom: 0.5rem;
+                    }
+                }
             }
             .Right {
                 width: 20%;
@@ -71,6 +98,7 @@
                     align-items: center;
                     position: sticky;
                     top: 10rem;
+                    width: 90%;
                     .Stat {
                         display: flex;
                         flex-direction: column;

@@ -27,12 +27,14 @@ class Recipe extends Component {
             const bgimage = {
                 backgroundImage: `url(${URL.createObjectURL(new Blob([new Uint8Array(this.state.recipe.image)]))})`,
             }
-            header = (
-                <div className={css.HeaderContainer} style={bgimage}>
-                    <h1>{this.state.recipe.description}</h1>
-                </div>
-            );
-
+            if (this.state.recipe.image != null) {
+                header = (
+                    <div className={css.HeaderContainer} style={bgimage}>
+                        <h1>{this.state.recipe.description}</h1>
+                    </div>
+                );
+            }
+            
             content = (
                 <div className={css.ColumnContainer}>
                     <div className={css.Left}>
@@ -41,6 +43,12 @@ class Recipe extends Component {
                             <div >
                                 <p>Source: <a href={this.state.recipe.url}>{this.state.recipe.source}</a></p>
                                 <p>Difficulty: {this.state.recipe.difficulty}</p>
+                            </div>
+                            <div>
+                                <p>Categories:</p>
+                                {this.state.recipe.categories.map(category => (
+                                    <p className={css.RecipeTag}>{category.description}</p>
+                                ))}
                             </div>
                         </div>
                         <div className={css.Notes}>
@@ -62,6 +70,12 @@ class Recipe extends Component {
                                         </React.Fragment>
                                     ))}</p>
                                 </div>
+                            ))}
+                        </div>
+                        <div className={css.Ingredients}>
+                            <h2>Ingredients</h2>
+                            {this.state.recipe.ingredients.map(ingredient => (
+                                <p><span>{ingredient.amount}</span> {ingredient.uom.description} - {ingredient.description}</p>
                             ))}
                         </div>
                     </div>
