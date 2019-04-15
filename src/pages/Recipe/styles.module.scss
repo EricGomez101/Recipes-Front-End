@@ -1,0 +1,101 @@
+.Container {
+    .HeaderContainer {
+        padding: 2rem;
+        height: 50rem;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        h1 {
+            color: white;
+        }
+    }
+    .Content {
+        max-width: 120rem;
+        margin: 0 auto;
+        .ColumnContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            min-height: 100rem;
+            .Left {
+                width: 80%;
+                .RecipeDescriptionContainer {
+                    margin-bottom: 4rem;
+                    h1 {
+                        margin: 1rem 0 2rem;
+                    }
+                    div {
+                        display: flex;
+                        p {
+                            margin-right: 2rem;
+                        }
+                    }
+                }
+                .Notes {
+                    max-width: 70rem;
+                    p {
+                        font-size: 1.8rem;
+                        line-height: 1.25;
+                    }
+                }
+                .Directions {
+                    margin-top: 5rem;
+                    &__Header {
+                        margin-bottom: 1rem;
+                    }
+                    &__Line {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        margin-bottom: 2rem;
+                        p {
+                            max-width: 60rem;
+                            line-height: 1.25;
+                            font-size: 1.8rem;
+                        }
+                        h2 {
+                            margin-right: 1rem;
+                            width: 4rem;
+                            border-right: 5px solid#315990;
+                        }
+                    }
+                }
+            }
+            .Right {
+                width: 20%;
+                .StatsContainer {
+                    margin-top: 4rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    position: sticky;
+                    top: 10rem;
+                    .Stat {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid black;
+                        min-height: 12rem;
+                        width: 100%;
+                        p {
+                            font-weight: bold;
+                        }
+                        h2 {
+                            font-size: 3.5rem;
+                            color: #315990;
+                        }
+                        span {
+                            color: black;
+                            font-size: 1.6rem;
+                            font-family: 'Raleway', sans-serif;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

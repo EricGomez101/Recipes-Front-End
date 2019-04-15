@@ -6,13 +6,15 @@ class Nav extends Component{
     constructor() {
         super();
         this.state = {
-            search: "",
-            category: null,
+            search: '',
+            category: '',
         };
     }
 
     handleInput = (e) => {
         this.setState({[e.target.name]: e.target.value});
+    }
+    handleCategory = (e) => {
         console.log(e.target.value);
     }
     render() {
@@ -21,16 +23,18 @@ class Nav extends Component{
                 <h1>Foodie</h1>
                 <div className={css.LinkContainer}>
                     <p><Link to="/">Home</Link></p>
-                    <p><Link to="/">Home</Link></p>
-                    <p><Link to="/">Home</Link></p>
-                    <p><Link to="/">Home</Link></p>
+                    <p><Link to="/">Lunch</Link></p>
+                    <p><Link to="/">Dinner</Link></p>
+                    <p><Link to="/">Breakfast</Link></p>
                 </div>
                 <div className={css.DropDownContainer}>
                     <p>Search by category: </p>
-                    <select>
-                        <option value={null}>Select One</option>
-                        <option>Foo</option>
-                        <option>Bar</option>
+                    <select onChange={this.handleCategory}>
+                        <option value={''}>Select One</option>
+                        <option>American</option>
+                        <option>Mexican</option>
+                        <option>Italian</option>
+                        <option>FastFood</option>
                     </select>
                 </div>
                 <div className={css.SearchBarContainer}>
