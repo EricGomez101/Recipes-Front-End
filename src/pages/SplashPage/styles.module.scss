@@ -1,0 +1,60 @@
+.Container{
+    .Container__Header {
+        height: 50rem;
+        border: 2px solid white;
+        padding: 2rem;
+        background-image: url("../../static/burrito.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        h1 {
+            color: white;
+        }
+    }
+    .Container__Content{
+        max-width: 120rem;
+        margin: 0 auto;
+        min-height: 200rem;
+        .Content__Section {
+            border-top: 4px solid black;
+            margin-top: 5rem;
+            padding: 2rem 0;
+            .RecipeList {
+                margin-top: 3rem;
+                .Recipe{
+                    display: flex;
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    height: 25rem;
+                    margin-bottom: 4rem;
+                    .Recipe__ContentContainer {
+                        width: 75%;
+                        padding: 2rem;
+                        h1 {
+                            margin-bottom: 2rem;
+                            a {
+                                font-size: 4rem;
+                                color: black;
+                                font-weight: 900;
+                                font-family: 'Pacifico', cursive;
+                            }
+                            a:hover {
+                                color: #315990;
+                            }
+                        }
+                        p {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                    .Recipe__ImageContainer {
+                        width: 25%;
+                        img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
