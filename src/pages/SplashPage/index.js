@@ -31,7 +31,7 @@ class SplashPage extends Component {
                         <p>Difficulty: {recipe.difficulty}</p>
                     </div>
                     <div className={css.Recipe__ImageContainer}>
-                        {recipe.image != null ? <img src={`${API_URL}recipe/${recipe.id}/recipeimage`}/> : null}
+                        {recipe.image != null ? <img src={`${API_URL}api/v1/recipe/${recipe.id}/image`}/> : null}
                     </div>
                 </div>)
             )}</React.Fragment>

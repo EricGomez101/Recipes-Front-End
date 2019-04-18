@@ -24,7 +24,7 @@ class Recipe extends Component {
 
         if (this.state.recipe !== null) {
             const bgimage = {
-                backgroundImage: `url(${API_URL}recipe/${this.state.recipe.id}/recipeimage)`,
+                backgroundImage: `url(${API_URL}api/v1/recipe/${this.state.recipe.id}/image)`,
             }
             if (this.state.recipe.image != null) {
                 header = (
