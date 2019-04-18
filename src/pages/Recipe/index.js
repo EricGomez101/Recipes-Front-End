@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Nav from '../../components/Nav';
 import css from './styles.module.scss';
 import axios from 'axios';
-
 const API_URL = process.env.REACT_APP_API_URL;
 
 class Recipe extends Component {
@@ -25,7 +24,7 @@ class Recipe extends Component {
 
         if (this.state.recipe !== null) {
             const bgimage = {
-                backgroundImage: `url(${URL.createObjectURL(new Blob([new Uint8Array(this.state.recipe.image)]))})`,
+                backgroundImage: `url(${API_URL}recipe/${this.state.recipe.id}/recipeimage)`,
             }
             if (this.state.recipe.image != null) {
                 header = (
@@ -59,7 +58,7 @@ class Recipe extends Component {
                         <div className={css.Directions}>
                             <h2 className={css.Directions__Header}>Directions</h2>
                             {this.state.recipe.directions
-                            .match(/\*{1}[\w\s\,\:\.\(\)\'\!\\\/\#]+/g)
+                            .match(/\*?[\w\s\,\:\.\(\)\'\-\!\\\/\#]+/g)
                             .map((line, i) => (
                                 <div className={css.Directions__Line} key={`${line.slice(1)}${i}`}>
                                     <h2>{i + 1}</h2> 
